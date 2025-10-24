@@ -3,22 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
- 
   <title>Hospital Management System</title>
-
   <!-- Bootstrap 5 CDN -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- Font Awesome for icons -->
+  
+  <!-- Font Awesome for icons (one link is enough) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
+
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="style.css">
+   <link rel="stylesheet" href="style.css">
   <link rel="shortcut icon" href="./icon.jpg" type="image/x-icon">
 </head>
 <body>
 
-  <!-- ===== Navbar ===== -->
+
+<!-- ============navbar============= -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top shadow-sm">
     <div class="container">
       <a class="navbar-brand fw-bold text-primary" href="#">MediCare+</a>
@@ -37,7 +37,7 @@
         </ul>
       </div>
     </div>
-  </nav>
+  </nav> 
 
 <!-- ===== Banner Section ===== -->
 <section id="home" class="banner d-flex align-items-center text-white">
@@ -58,9 +58,9 @@
             <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#appointmentModal">
               <i class="fa-solid fa-calendar-check me-2"></i> Book Appointment
             </button>
-            <a href="#services" class="btn btn-outline-light btn-lg">
-              <i class="fa-solid fa-circle-info me-2"></i> Learn More
-            </a>
+            <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#appointmentModal">
+              <i class="fa-solid fa-calendar-check me-2"></i> Learn More
+            </button>
           </div>
         </div>
   
@@ -80,48 +80,62 @@
   </section>
   
   
-
-  <section id="doctors" class="doctors-section">
-    <div class="container" style="max-width:1100px;">
+<!-- dr setion  -->
+<section id="doctors" class="doctors-section">
+  <div class="container">
       <div class="text-center mb-4">
-        <div class="text-center mb-4">
           <h2 class="section-title">Our Doctors</h2>
           <p class="small-muted">Experienced, certified specialists ready to take care of you.</p>
-        
-          <div class="mt-3" style="max-width:700px; margin:auto;">
-            <p style="color:#555; font-size:1rem;">
-              Our team consists of highly qualified medical professionals from top institutions around the world. 
-              Each doctor specializes in their respective field — from cardiology and pediatrics to dermatology and general medicine.
-            </p>
-        
-            <ul style="text-align:left; display:inline-block; color:#555; font-size:0.95rem; line-height:1.7;">
-              <li>✔ Over 10 years of average experience in patient care</li>
-              <li>✔ Experts in latest medical technologies and treatments</li>
-              <li>✔ Compassionate approach ensuring comfort and trust</li>
-              <li>✔ Available for both in-person and online consultations</li>
-            </ul>
-        
-            <p style="color:#555; font-size:1rem; margin-top:10px;">
-              Whether you’re visiting for a routine check-up or specialized care, our doctors are here to guide you every step of the way.
-            </p>
-          </div>
-        </div>
-        
-  
-      <!-- Optional: filter/search row -->
-      <div class="filter-bar">
+          <div class="doctors-info">
+              <p>
+                  Our team consists of highly qualified medical professionals from top institutions around the world.
+                  Each doctor specializes in their respective field — from cardiology and pediatrics to dermatology and general medicine.
+              </p>
 
-        <input id="doctorSearch" class="form-control" style="max-width:360px; border-radius:10px;" placeholder="Search doctor by name or speciality...">
-        <select id="filterSpec" class="form-control" style="width:180px; border-radius:10px;">
-          <option value="">All Specialties</option>
-          <option>Cardiologist</option>
-          <option>Dermatologist</option>
-          <option>Pediatrician</option>
-          <option>Orthopedic</option>
-        </select>
-        <button id="clearFilters" class="btn btn-sm" style="border-radius:10px; background:#f1f5ff; border:1px solid #e7ecff;">Clear</button>
+              <ul class="doctor-details">
+                  <li>✔ Over 10 years of average experience in patient care</li>
+                  <li>✔ Experts in latest medical technologies and treatments</li>
+                  <li>✔ Compassionate approach ensuring comfort and trust</li>
+                  <li>✔ Available for both in-person and online consultations</li>
+              </ul>
+
+              <p>
+                  Whether you’re visiting for a routine check-up or specialized care, our doctors are here to guide you every step of the way.
+              </p>
+          </div>
       </div>
+  </div>
+</section>
+
   
+<!-- Filter/Search Row -->
+<div class="filter-bar">
+  
+  <!-- Doctor Search Input -->
+  <input id="doctorSearch" class="custom-input" placeholder="Search doctor by name or speciality..." aria-label="Search for doctors">
+  
+  <!-- Specialty Filter Dropdown -->
+  <select id="filterSpec" class="custom-select">
+    <option value="">All Specialties</option>
+    <option>Cardiologist</option>
+    <option>Dermatologist</option>
+    <option>Pediatrician</option>
+    <option>Orthopedic</option>
+  </select>
+  
+  <!-- Clear Filters Button -->
+  <button id="clearFilters" class="custom-btn-clear">
+    Clear Filters
+  </button>
+
+  <!-- Optional: Add a "Search" button for user action -->
+  <button id="searchBtn" class="custom-btn-search">
+    <i class="fa-solid fa-search me-2"></i> Search
+  </button>
+</div>
+
+
+  <!-- dr section  -->
      <section id="doctors">
   <div class="container">
     <h2 class="section-title">Our Doctors</h2>
@@ -130,7 +144,7 @@
     <div id="doctorsGrid">
       <!-- Doctor 1 -->
       <div class="doctor-card">
-        <img src="./girl.jfif" alt="Dr. Sarah Ahmed">
+        <img src="./girl3.webp" alt="Dr. Sarah Ahmed">
         <div class="card-body">
           <div class="doctor-meta">
             <div>
@@ -242,63 +256,7 @@
           </div>
         </div>
       </div>
-      <!-- doctor 5 -->
-      <div class="doctor-card">
-        <img src="./girl3.webp" alt="Dr. Aliza Shah">
-        <div class="card-body">
-          <div class="doctor-meta">
-            <div>
-              <h5>Dr. Aliza Shah</h5>
-              <div class="small-muted">Oncologist</div>
-            </div>
-            <div class="badge-exp">7 yrs</div>
-          </div>
-          <div class="rating">
-            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
-            <span>4.9</span>
-          </div>
-          <p class="small-muted">physicians that evaluate, diagnose, and treat cancer patients using a range of treatments as well as medical and surgical care.</p>
-          <div class="doctor-actions">
-            <button class="btn-contact">Book / Contact</button>
-            <a class="btn-visit" href="#">View Profile</a>
-          </div>
-          <div class="social-icons">
-            <a href="#"><i class="fa-solid fa-globe"></i></a>
-            <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
-            <a href="#"><i class="fa-solid fa-envelope"></i></a>
-          </div>
-        </div>
-      </div>
-      <!-- doctor 6 -->
-      <div class="doctor-card">
-        <img src="./boy3.jfif" alt="Dr. Ilyas Zahid">
-        <div class="card-body">
-          <div class="doctor-meta">
-            <div>
-              <h5>Dr. Ilyas Zahid</h5>
-              <div class="small-muted">Surgeon</div>
-            </div>
-            <div class="badge-exp">10 yrs</div>
-          </div>
-          <div class="rating">
-            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
-            <span>7.5</span>
-          </div>
-          <p class="small-muted">
-            In medicine, a surgeon is a medical doctor who performs surgery.</p>
-          <div class="doctor-actions">
-            <button class="btn-contact">Book / Contact</button>
-            <a class="btn-visit" href="#">View Profile</a>
-          </div>
-          <div class="social-icons">
-            <a href="#"><i class="fa-solid fa-globe"></i></a>
-            <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
-            <a href="#"><i class="fa-solid fa-envelope"></i></a>
-          </div>
-        </div>
-      </div>
+      
     </div>
   </div>
 </section>
@@ -517,317 +475,310 @@
   </div>
 </section>
 
-<!-- ===== Patients Section ===== -->
-<section id="patients" class="py-5" style="background: #e6f0ff;">
+<!-- ===== PATIENTS SECTION ===== -->
+<section id="patients" class="container my-5">
+  <h2 class="text-center mb-4">Our Patients</h2>
+  <div class="patient-info">
+      <p class="text-center">Here is a list of some of our patients. You can view their basic details, conditions, and upcoming appointment dates.</p>
+  </div>
+  <table class="table table-striped table-bordered">
+      <thead class="thead-dark">
+          <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Age</th>
+              <th>Condition</th>
+              <th>Appointment Date</th>
+              <th>Actions</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <td>1</td>
+              <td>John Doe</td>
+              <td>45</td>
+              <td>Flu</td>
+              <td>2025-10-21</td>
+              <td>
+                  <button class="btn btn-info btn-sm">View</button>
+                  <button class="btn btn-warning btn-sm">Edit</button>
+                  <button class="btn btn-danger btn-sm">Delete</button>
+              </td>
+          </tr>
+          <tr>
+              <td>2</td>
+              <td>Jane Smith</td>
+              <td>30</td>
+              <td>Back Pain</td>
+              <td>2025-10-22</td>
+              <td>
+                  <button class="btn btn-info btn-sm">View</button>
+                  <button class="btn btn-warning btn-sm">Edit</button>
+                  <button class="btn btn-danger btn-sm">Delete</button>
+              </td>
+          </tr>
+          <tr>
+              <td>3</td>
+              <td>Michael Johnson</td>
+              <td>60</td>
+              <td>Heart Disease</td>
+              <td>2025-10-23</td>
+              <td>
+                  <button class="btn btn-info btn-sm">View</button>
+                  <button class="btn btn-warning btn-sm">Edit</button>
+                  <button class="btn btn-danger btn-sm">Delete</button>
+              </td>
+          </tr>
+          <tr>
+              <td>4</td>
+              <td>Sarah Lee</td>
+              <td>29</td>
+              <td>Diabetes</td>
+              <td>2025-10-24</td>
+              <td>
+                  <button class="btn btn-info btn-sm">View</button>
+                  <button class="btn btn-warning btn-sm">Edit</button>
+                  <button class="btn btn-danger btn-sm">Delete</button>
+              </td>
+          </tr>
+          <tr>
+              <td>5</td>
+              <td>Emily Davis</td>
+              <td>38</td>
+              <td>Asthma</td>
+              <td>2025-10-25</td>
+              <td>
+                  <button class="btn btn-info btn-sm">View</button>
+                  <button class="btn btn-warning btn-sm">Edit</button>
+                  <button class="btn btn-danger btn-sm">Delete</button>
+              </td>
+          </tr>
+      </tbody>
+  </table>
+  <div class="text-center mt-4">
+      <button class="btn btn-primary btn-sm">Load More Patients</button>
+  </div>
+</section>
 
+
+<!-- ===== SERVICES SECTION ===== -->
+<section id="services" class="container my-5">
+  <h2 class="text-center mb-4">Our Services</h2>
+  <p class="text-center mb-5">We offer a wide range of health services to meet your medical needs. Our team of experts is dedicated to providing the highest level of care and support.</p>
+  
+  <div class="services-grid">
+      <div class="service-card">
+          <i class="service-icon fas fa-stethoscope"></i>
+          <h5>General Checkup</h5>
+          <p>Routine health checks to ensure wellness and early detection of health issues.</p>
+      </div>
+      <div class="service-card">
+          <i class="service-icon fas fa-heartbeat"></i>
+          <h5>Cardiology</h5>
+          <p>Heart and vascular health services, including diagnostics and treatment plans.</p>
+      </div>
+      <div class="service-card">
+          <i class="service-icon fas fa-tooth"></i>
+          <h5>Dentistry</h5>
+          <p>Comprehensive dental care including cleanings, fillings, and cosmetic treatments.</p>
+      </div>
+      <div class="service-card">
+          <i class="service-icon fas fa-pills"></i>
+          <h5>Pharmacy</h5>
+          <p>Our on-site pharmacy offers prescribed medications and over-the-counter solutions.</p>
+      </div>
+      <div class="service-card">
+          <i class="service-icon fas fa-baby-carriage"></i>
+          <h5>Pediatrics</h5>
+          <p>Expert care for children from newborns to adolescents, including vaccinations and regular health screenings.</p>
+      </div>
+      <div class="service-card">
+          <i class="service-icon fas fa-user-md"></i>
+          <h5>Dermatology</h5>
+          <p>Comprehensive skin care services, from acne treatment to advanced skin procedures.</p>
+      </div>
+      <div class="service-card">
+          <i class="service-icon fas fa-wheelchair"></i>
+          <h5>Physiotherapy</h5>
+          <p>Rehabilitation and therapy to recover from injuries and improve mobility.</p>
+      </div>
+      <div class="service-card">
+        <i class="service-icon fas fa-wheelchair"></i>
+        <h5>Neurologist</h5>
+        <p>Specializing in diagnosing, treating, and managing disorders of the brain, spinal cord, and nerves</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== CONTACT SECTION ===== -->
+<section id="contact" class="container my-5">
+  <h2 class="text-center mb-4">Contact Us</h2>
+  <div class="contact-info mb-5">
+      <p><strong>Address:</strong> 123 Health Street, Karachi, Pakistan</p>
+      <p><strong>Email:</strong> contact@hospital.com</p>
+      <p><strong>Phone:</strong> +123-456-7890</p>
+      <p><strong>Working Hours:</strong> Monday - Friday: 9:00 AM - 5:00 PM</p>
+  </div>
+  
+  <div class="text-center mb-4">
+      <h3>Get In Touch</h3>
+      <p>If you have any questions or would like to book an appointment, please reach out to us!</p>
+  </div>
+
+  <!-- Contact Form -->
+  <form id="contact-form" action="#" method="post">
+      <div class="row">
+          <div class="col-md-6">
+              <div class="form-group">
+                  <label for="name">Your Name</label>
+                  <input type="text" id="name" class="form-control" placeholder="Enter your name" required>
+              </div>
+          </div>
+          <div class="col-md-6">
+              <div class="form-group">
+                  <label for="email">Your Email</label>
+                  <input type="email" id="email" class="form-control" placeholder="Enter your email" required>
+              </div>
+          </div>
+          <div class="col-12">
+              <div class="form-group">
+                  <label for="message">Your Message</label>
+                  <textarea id="message" class="form-control" rows="4" placeholder="Enter your message" required></textarea>
+              </div>
+          </div>
+          <div class="col-12">
+              <button type="submit" class="btn btn-primary">Send Message</button>
+          </div>
+      </div>
+  </form>
+
+  <!-- Google Map -->
+  <div id="map" class="mt-5">
+      <!-- Embed Google Maps iframe for Karachi location -->
+      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d112015.18139516423!2d67.0334976!3d24.9233408!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2s!4v1761109087663!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>" 
+    
+  
+  </div>
+</section>
+
+<!-- 
+Footer Section -->
+<footer class="py-5 my-4" style="background-color: #f1f5f9; border-top: 2px solid #007bff;">
+  <!-- Footer Navigation Links -->
   <div class="container">
-    <h2 class="text-center text-primary mb-5">Patients Overview</h2>
-    <p class="text-center mb-4" style="color:#555; max-width:700px; margin:auto;">
-      Meet some of our patients and see how our experienced doctors are helping them lead healthier lives.
-    </p>
-
-    <div class="patients-cards">
-      
-      <!-- Patient 1 -->
-      <div class="patient-card fade-in">
-        <div class="patient-header">
-          <span class="patient-id">#001</span>
-          <h5 class="patient-name">Ahmed</h5>
-          <span class="patient-age">32 yrs</span>
-        </div>
-        <div class="patient-body">
-          <p>Disease: <span class="disease flu">Flu</span></p>
-          <p>Assigned Doctor: <strong>Dr. Fatima</strong></p>
-        </div>
-        <div class="patient-footer">
-          <button class="btn btn-primary btn-sm">View History</button>
-          <button class="btn btn-outline-primary btn-sm">Contact</button>
-        </div>
+    <div class="row text-center text-md-left">
+      <!-- Quick Links -->
+      <div class="col-md-3 mb-4">
+        <h5 class="text-dark">Quick Links</h5>
+        <ul class="list-unstyled">
+          <li><a href="#" class="nav-link text-body-secondary">Home</a></li>
+          <li><a href="#" class="nav-link text-body-secondary">Features</a></li>
+          <li><a href="#" class="nav-link text-body-secondary">Pricing</a></li>
+          <li><a href="#" class="nav-link text-body-secondary">FAQs</a></li>
+          <li><a href="#" class="nav-link text-body-secondary">About</a></li>
+        </ul>
       </div>
 
-      <!-- Patient 2 -->
-      <div class="patient-card fade-in">
-        <div class="patient-header">
-          <span class="patient-id">#002</span>
-          <h5 class="patient-name">Sana</h5>
-          <span class="patient-age">27 yrs</span>
-        </div>
-        <div class="patient-body">
-          <p>Disease: <span class="disease allergy">Skin Allergy</span></p>
-          <p>Assigned Doctor: <strong>Dr. Ali</strong></p>
-        </div>
-        <div class="patient-footer">
-          <button class="btn btn-primary btn-sm">View History</button>
-          <button class="btn btn-outline-primary btn-sm">Contact</button>
-        </div>
-      </div>
-       <!-- Patient 3 -->
-       <div class="patient-card fade-in">
-        <div class="patient-header">
-          <span class="patient-id">#003</span>
-          <h5 class="patient-name">Hira</h5>
-          <span class="patient-age">29 yrs</span>
-        </div>
-        <div class="patient-body">
-          <p>Disease: <span class="disease allergy">Brain Isuue</span></p>
-          <p>Assigned Doctor: <strong>Dr. Sumair Khan</strong></p>
-        </div>
-        <div class="patient-footer">
-          <button class="btn btn-primary btn-sm">View History</button>
-          <button class="btn btn-outline-primary btn-sm">Contact</button>
-        </div>
-      </div>
- <!-- Patient 4 -->
- <div class="patient-card fade-in">
-  <div class="patient-header">
-    <span class="patient-id">#004</span>
-    <h5 class="patient-name">Noor</h5>
-    <span class="patient-age">27 yrs</span>
-  </div>
-  <div class="patient-body">
-    <p>Disease: <span class="disease allergy">Allergy</span></p>
-    <p>Assigned Doctor: <strong>Dr. Ali</strong></p>
-  </div>
-  <div class="patient-footer">
-    <button class="btn btn-primary btn-sm">View History</button>
-    <button class="btn btn-outline-primary btn-sm">Contact</button>
-  </div>
-</div>
- <!-- Patient 5 -->
-      <div class="patient-card fade-in">
-        <div class="patient-header">
-          <span class="patient-id">#005</span>
-          <h5 class="patient-name">Sahar</h5>
-          <span class="patient-age">27 yrs</span>
-        </div>
-        <div class="patient-body">
-          <p>Disease: <span class="disease allergy">Skin Allergy</span></p>
-          <p>Assigned Doctor: <strong>Dr. Ali</strong></p>
-        </div>
-        <div class="patient-footer">
-          <button class="btn btn-primary btn-sm">View History</button>
-          <button class="btn btn-outline-primary btn-sm">Contact</button>
-        </div>
-      </div>
-      <!-- Patient 6 -->
-      <div class="patient-card fade-in">
-        <div class="patient-header">
-          <span class="patient-id">#003</span>
-          <h5 class="patient-name">Bilal</h5>
-          <span class="patient-age">40 yrs</span>
-        </div>
-        <div class="patient-body">
-          <p>Disease: <span class="disease heart">Heart Pain</span></p>
-          <p>Assigned Doctor: <strong>Dr. Sarah</strong></p>
-        </div>
-        <div class="patient-footer">
-          <button class="btn btn-primary btn-sm">View History</button>
-          <button class="btn btn-outline-primary btn-sm">Contact</button>
-        </div>
+      <!-- Contact Info -->
+      <div class="col-md-3 mb-4">
+        <h5 class="text-dark">Contact Us</h5>
+        <ul class="list-unstyled">
+          <li><a href="tel:+123456789" class="nav-link text-body-secondary">+1 234 567 89</a></li>
+          <li><a href="mailto:info@hospital.com" class="nav-link text-body-secondary">info@hospital.com</a></li>
+          <li><a href="#" class="nav-link text-body-secondary">123 Health St, City, Country</a></li>
+        </ul>
       </div>
 
-    </div>
-  </div>
-</section>
-
- 
-
- <!-- ===== Services Section ===== -->
-<section id="services" class="py-5">
-  <div class="container text-center">
-    <h2 class="text-primary mb-4">Our Services</h2>
-    <p class="mb-5 service-intro">
-      Explore the wide range of healthcare services we provide to ensure the well-being of our patients.
-    </p>
-    <div class="services-grid">
-
-      <!-- Service 1 -->
-      <div class="service-box">
-        <i class="fa-solid fa-heart-pulse fa-2x"></i>
-        <h5>Emergency Care</h5>
-        <p>24/7 emergency services with expert medical staff to handle critical situations.</p>
+      <!-- Social Media Links -->
+      <div class="col-md-3 mb-4">
+        <h5 class="text-dark">Follow Us</h5>
+        <ul class="list-unstyled d-flex justify-content-center">
+          <li><a href="#" class="nav-link px-3 text-body-secondary"><i class="fab fa-facebook-f"></i></a></li>
+          <li><a href="#" class="nav-link px-3 text-body-secondary"><i class="fab fa-twitter"></i></a></li>
+          <li><a href="#" class="nav-link px-3 text-body-secondary"><i class="fab fa-instagram"></i></a></li>
+          <li><a href="#" class="nav-link px-3 text-body-secondary"><i class="fab fa-linkedin-in"></i></a></li>
+        </ul>
       </div>
 
-      <!-- Service 2 -->
-      <div class="service-box">
-        <i class="fa-solid fa-tooth fa-2x"></i>
-        <h5>Dental Care</h5>
-        <p>Comprehensive dental treatments including checkups, cleaning, and surgery.</p>
-      </div>
-
-      <!-- Service 3 -->
-      <div class="service-box">
-        <i class="fa-solid fa-stethoscope fa-2x"></i>
-        <h5>Diagnostics</h5>
-        <p>Advanced diagnostic tools for accurate detection of health conditions.</p>
-      </div>
-
-      <!-- Service 4 -->
-      <div class="service-box">
-        <i class="fa-solid fa-pills fa-2x"></i>
-        <h5>Pharmacy</h5>
-        <p>Wide range of medicines available on-site with professional pharmacists.</p>
-      </div>
-
-      <!-- Service 5 -->
-      <div class="service-box">
-        <i class="fa-solid fa-baby fa-2x"></i>
-        <h5>Pediatrics</h5>
-        <p>Expert care for children from infancy through adolescence with child-friendly environment.</p>
-      </div>
-
-      <!-- Service 6 -->
-      <div class="service-box">
-        <i class="fa-solid fa-person-running fa-2x"></i>
-        <h5>Physiotherapy</h5>
-        <p>Rehabilitation and physical therapy programs for recovery and improved mobility.</p>
-      </div>
-
-      <!-- Service 7 -->
-      <div class="service-box">
-        <i class="fa-solid fa-microscope fa-2x"></i>
-        <h5>Lab Testing</h5>
-        <p>Comprehensive laboratory tests for blood, urine, and other samples.</p>
-      </div>
-
-      <!-- Service 8 -->
-      <div class="service-box">
-        <i class="fa-solid fa-syringe fa-2x"></i>
-        <h5>Vaccination</h5>
-        <p>All types of vaccines available for children and adults to prevent diseases.</p>
-      </div>
-       <!-- Service 9 -->
-       <div class="service-box">
-        <i class="fa-solid fa-syringe fa-2x"></i>
-        <h5>Emergency Care</h5>
-        <p>24/7 emergency services with expert medical staff to handle critical situations. </p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-
-
-  <!-- ===== Contact Section ===== -->
-<section id="contact" class="py-5" style="background: #f5f8ff;">
-  <div class="container text-center">
-    <h2 class="text-primary mb-4">Contact Us</h2>
-    <p class="mb-4" style="color:#555;">We are here to assist you. Reach out to us via any of the following methods or send us a message directly.</p>
-
-    <!-- Contact Details -->
-    <div class="contact-details mb-5">
-      <p><i class="fa-solid fa-location-dot text-primary me-2"></i> 123 Health Street, Karachi, Pakistan</p>
-      <p><i class="fa-solid fa-envelope text-primary me-2"></i> info@medicare.com</p>
-      <p><i class="fa-solid fa-phone text-primary me-2"></i> +92 300 1234567</p>
-    </div>
-
-    <!-- Contact Form -->
-    <div class="contact-form mb-5">
-      <form style="max-width:600px; margin:auto;">
-        <div class="mb-3">
-          <input type="text" class="form-control" placeholder="Your Name" required>
-        </div>
-        <div class="mb-3">
-          <input type="email" class="form-control" placeholder="Your Email" required>
-        </div>
-        <div class="mb-3">
-          <textarea class="form-control" rows="4" placeholder="Your Message" required></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary px-4">Send Message</button>
-      </form>
-    </div>
-
-    <!-- Social Media Links -->
-    <div class="social-links">
-      <a href="#" class="me-3"><i class="fa-brands fa-facebook fa-2x text-primary"></i></a>
-      <a href="#" class="me-3"><i class="fa-brands fa-twitter fa-2x text-primary"></i></a>
-      <a href="#" class="me-3"><i class="fa-brands fa-instagram fa-2x text-primary"></i></a>
-      <a href="#"><i class="fa-brands fa-linkedin fa-2x text-primary"></i></a>
-    </div>
-
-   
-  </div>
-</section>
-
-
-
-<footer class="py-3 my-4">
-  <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-    <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
-    <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Features</a></li>
-    <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Pricing</a></li>
-    <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
-    <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
-  </ul>
-  <p class="text-center text-muted">© 2025 Company, Inc</p>
-</footer>
-
-
-
-<!-- ===== Appointment Modal =====
-<div class="modal fade" id="appointmentModal" tabindex="-1">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content rounded-4 shadow">
-      <div class="modal-header bg-primary text-white rounded-top-4">
-        <h5 class="modal-title">Book Appointment</h5>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
-      </div>
-      <div class="modal-body">
-        <form>
-          <div class="mb-2">
-            <input type="text" class="form-control" placeholder="Full Name" required>
+      <!-- Newsletter Signup -->
+      <div class="col-md-3 mb-4">
+        <h5 class="text-dark">Newsletter</h5>
+        <p class="text-body-secondary">Stay updated with the latest news from our hospital.</p>
+        <form action="#" method="POST">
+          <div class="form-group">
+            <input type="email" class="form-control" placeholder="Enter your email" required />
           </div>
-          <div class="mb-2">
-            <input type="email" class="form-control" placeholder="Email" required>
-          </div>
-          <div class="mb-2">
-            <input type="tel" class="form-control" placeholder="Phone" required>
-          </div>
-          <div class="mb-2">
-            <select class="form-control" required>
-              <option value="">Select Doctor</option>
-              <option>Dr. Fatima</option>
-              <option>Dr. Ali</option>
-              <option>Dr. Sarah</option>
-            </select>
-          </div>
-          <div class="mb-2">
-            <input type="date" class="form-control" required>
-          </div>
-          <div class="mb-3">
-            <textarea class="form-control" rows="3" placeholder="Your Message"></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary w-100">Submit Appointment</button>
+          <button type="submit" class="btn btn-primary btn-block">Subscribe</button>
         </form>
       </div>
     </div>
   </div>
-</div> -->
+
+  <!-- Footer Bottom Section -->
+  <div class="text-center mt-4">
+    <p class="text-body-secondary">© 2025 Company, Inc. All Rights Reserved.</p>
+  </div>
+</footer>
 
 
-  <!-- Back to Top Button
-  <button id="backToTop" class="btn btn-primary"><i class="fa-solid fa-arrow-up"></i></button> -->
+    <!-- Back to Top Button -->
+    <button id="backToTopBtn" onclick="scrollToTop()">
+      <i class="fas fa-arrow-up"></i>
+  </button>
 
-  <!-- Bootstrap JS --> 
+
+
+
+<!-- Appointment Modal -->
+<div class="modal fade" id="appointmentModal" tabindex="-1" aria-labelledby="appointmentModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="appointmentModalLabel">Book Your Appointment</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <!-- Appointment Form Content -->
+        <form>
+          <div class="mb-3">
+            <label for="name" class="form-label">Your Name</label>
+            <input type="text" class="form-control" id="name" required>
+          </div>
+          <div class="mb-3">
+            <label for="phone" class="form-label">Phone Number</label>
+            <input type="tel" class="form-control" id="phone" required>
+          </div>
+          <!-- Add other fields as necessary -->
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Learn More Modal -->
+<div class="modal fade" id="learnMoreModal" tabindex="-1" aria-labelledby="learnMoreModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="learnMoreModalLabel">Learn More</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <!-- Learn More Form Content -->
+        <p>Here is some information about the service...</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+<script src="script.js"></script>
+  <!-- Bootstrap JS  -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script> 
 
-  <!-- Smooth Scroll & Back to Top -->
-  <script>
-    // Fade-in on scroll
-    const fadeElems = document.querySelectorAll('.fade-in');
-    window.addEventListener('scroll', () => {
-      fadeElems.forEach(el => {
-        const rect = el.getBoundingClientRect();
-        if(rect.top < window.innerHeight - 50) {
-          el.classList.add('visible');
-        }
-      });
-    });
-  
-    // Trigger initially for cards already in view
-    window.dispatchEvent(new Event('scroll'));
-  </script>
-  
+ 
 </body>
 </html>
